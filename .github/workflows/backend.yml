@@ -20,7 +20,7 @@ name: Backend
 on:
   push:
     branches:
-      - dev
+      - test-e2e-ci-v1
     paths:
       - '.github/workflows/backend.yml'
       - 'package.xml'
