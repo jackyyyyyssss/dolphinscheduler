@@ -23,6 +23,7 @@ import java.time.Duration;
 
 import lombok.Getter;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -46,8 +47,7 @@ public final class WorkflowRunDialog {
     public WorkflowDefinitionTab submit() {
         new WebDriverWait(parent().driver(), Duration.ofSeconds(20))
                 .until(ExpectedConditions.elementToBeClickable(buttonSubmit()));
-
-        buttonSubmit().click();
+        ((JavascriptExecutor) parent().driver()).executeScript("arguments[0].click();", buttonSubmit());
 
         return parent();
     }
