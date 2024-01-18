@@ -19,7 +19,7 @@ on:
   pull_request:
   push:
     branches:
-      - dev
+      - test_code_stytle
 
 name: E2E
 
